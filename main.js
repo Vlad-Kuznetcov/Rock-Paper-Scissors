@@ -10,6 +10,7 @@ function resetStats() {
   stats.Wins = 0;
   updateStats("Wins: 0, Losses: 0, Ties: 0");
   renderChoices("No move", "No move", "");
+  hideResetButton();
 }
 
 function updateStats() {
@@ -20,6 +21,15 @@ function updateStats() {
 function renderChoices(playerChoice, computerChoice, result) {
   const choices = document.getElementById("choices");
   choices.textContent = `You chose: ${playerChoice}. Computer's choice: ${computerChoice}. ${result}`;
+}
+
+function hideResetButton() {
+  const resetBtn = document.getElementById("reset-btn");
+  resetBtn.classList.add("hidden");
+}
+function showResetButton() {
+  const resetBtn = document.getElementById("reset-btn");
+  resetBtn.classList.remove("hidden");
 }
 
 function compWay(playerChoice) {
@@ -45,5 +55,8 @@ function compWay(playerChoice) {
     result = "You lose!";
   }
   renderChoices(playerChoice, computerChoice, result);
+
   updateStats();
+
+  showResetButton();
 }
