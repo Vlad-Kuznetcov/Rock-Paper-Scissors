@@ -55,3 +55,17 @@ button:active {
   background-color: #424140;
   border-radius: 5px;
 }
+
+@media screen and (max-width: 768px) {
+  body {
+    justify-content: center;
+    align-items: center;
+  }
+  h1 {
+    margin: 40px;
+    text-align: center;
+  }
+  .game-container {
+    width: 70%;
+  }
+}
